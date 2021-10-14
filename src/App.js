@@ -1,11 +1,9 @@
 import React from "react";
-import "./style.css";
+import './static/css/main.scss'
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
+import Main from "./layouts/Main";
+
+const App = () => (
+        <Main />
   );
-}
+export default App;
