@@ -1,7 +1,4 @@
 import React from "react";
-import {Card} from "semantic-ui-react";
-
-
 //this will display the tiles of the weather
 //3 different tiles for 3 days ahead.
 // a side bar that will keep track of the city names and will later refill it when clicked
@@ -10,15 +7,18 @@ import {Card} from "semantic-ui-react";
 
 const WeatherCard = (props) => {
 
+    //some varibles to store data received from the api call
    const {weather} = props;
+   const iconName = weather?.weather[0].icon;
 
   return (
       <div className="card">
-              <div className="container">
+          <div className="container">
                   <h4><b>{weather?.name}</b></h4>
                   <p> Humidity :  {weather?.main?.humidity}</p>
                   <p> Country : {weather?.sys?.country}</p>
-              </div>
+                  <img className="iconContainer" src = {'http://openweathermap.org/img/w/'+ iconName + '.png' }/>
+          </div>
       </div>
 
 
