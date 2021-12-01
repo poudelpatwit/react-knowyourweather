@@ -14,15 +14,21 @@ const WeatherCard = (props) => {
   return (
       <div className="card">
           <div className="container">
+          {/*this is where all the weather data is being displayed from the api call*/}
                   <h4><b>{weather?.name}</b></h4>
+                  <p> <b>Country : {weather?.sys?.country}</b> </p>
+                  <p> {weather?.weather[0].main} </p>
+                  <p> Temperature: {weather?.main?.temp} </p>
+                  <span> Feels Like : {weather?.main?.feels_like} </span>
+                  <p> Clouds : {weather?.clouds?.all}% </p>
+                  <p> Minimum Temperature: {weather?.main?.temp_min} </p>
+                  <span> Maximum Temperature: {weather?.main?.temp_max} </span>
+                  <p> Wind Speed: {weather?.wind?.speed} </p>
                   <p> Humidity :  {weather?.main?.humidity}</p>
-                  <p> Country : {weather?.sys?.country}</p>
-                  <img className="iconContainer" src = {'http://openweathermap.org/img/w/'+ iconName + '.png' }/>
+                  <img className="iconContainer" src = {'http://openweathermap.org/img/w/'+ iconName + '.png'}/>
+                  <p> {weather?.weather[0]?.description.toUpperCase()}</p>
           </div>
       </div>
-
-
   );
 }
-
 export default WeatherCard;
