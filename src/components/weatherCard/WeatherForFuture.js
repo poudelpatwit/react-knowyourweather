@@ -31,7 +31,7 @@ const axios = require('axios').default;
 return(
              <div className="card">
                  <div className="container">
-                    <p> {weather?.coord?.lat} handle = {this.getWeather2()} </p>
+                    <p> {weather?.coord?.lat} </p>
                     <p> {weather?. coord?.lon} </p>
                  </div>
              </div>
