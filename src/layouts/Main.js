@@ -22,20 +22,14 @@ function Main() {
         var GEO_CODE_API = "2c857ccaba884d4b8378f6de0e309bfa";
 
         //first component variables
+        //this passes the city and calls the update city function
         const [city, updateCity] = useState();
 
-
+        //this stores the api response
         const [weather, updateWeather] = useState();
 
-        //constant to store the lat long information
-        const [lat, updateLatitude] = useState();
-        const [long, updateLong] = useState();
-
-
-        const [latlong, setLatLong]= useState();
-
-
-
+        //store nearby cities data
+        const [cityDetails, setNearbyCities] = useState();
 
         //function to make the api call using the city name
         /*const [weatherForTomorrow, updateWeatherForTomorrow] = useState(); */
@@ -52,6 +46,24 @@ function Main() {
                 // Handle Error Here
                 console.error(err);
             });
+             }
+
+               //this will store our latitude and longitude
+
+             //here we will call our api to get the nearby cities data
+             const getNearbyCities = async (e) => {
+                     const axios = require('axios').default;
+              axios.get(`https://api.openweathermap.org/data/2.5/find?lat=${weather?.coord?.lat}&lon=${weather?.coord?.lon}&cnt=3&appid=${OPEN_WEATHER_API_KEY}`,
+                     )
+                         .then(resp => {
+                             console.log(resp.data);
+                             setNearbyCities(resp.data);
+                             //store the api response
+                         })
+                         .catch(err => {
+                             // Handle Error Here
+                             console.error(err);
+                         });
              }
 
 
@@ -87,13 +99,15 @@ function Main() {
         }
             */
     return (
-        <div>
-         <SearchBar  updateCity = {updateCity} fetchWeather = {fetchWeather} />
-         <WeatherCard  weather={weather} city = {city} />
+        <div className = "mainPage">
+         <SearchBar  updateCity = {updateCity} fetchWeather = {fetchWeather}  getNearbyCities = {getNearbyCities}/>
+         <WeatherCard  weather = {weather} city = {city} />
          <WeatherForFuture weather = {weather}   />
          <WeatherDaily/>
-         <WeatherCard2 />
-         <WeatherCard3 />
+         <div className = "surroundingCities">
+         <WeatherCard2  cityDetails = {cityDetails}/>
+         <WeatherCard3  cityDetails = {cityDetails}/>
+         </div>
          <Footer/>
         </div>
             );

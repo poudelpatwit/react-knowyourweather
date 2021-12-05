@@ -3,3 +3,16 @@
 @import 'components/searchBar';
 @import 'components/weatherCard';
 @import 'components/contactIcons.scss';
+
+.mainPage{
+       display:flex;
+       flex-direction: column;
+}
+
+.surroundingCities{
+        display:flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+}

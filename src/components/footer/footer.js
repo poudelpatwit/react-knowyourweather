@@ -12,7 +12,9 @@ import ContactIcons from "../contact/ContactIcons";
 const Footer = () => {
 return(
 //import the icons
+        <div className="footer">
         <ContactIcons />
+        </div>
 );
 };
 export default Footer;

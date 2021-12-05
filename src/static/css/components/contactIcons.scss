@@ -1,3 +1,8 @@
+.footer{
+display: flex;
+flex-direction: row;
+}
+
 .icons{
 display: flex;
 position: fixed;
@@ -10,7 +15,6 @@ margin-top: auto;
 margin-bottom: auto;
 text-align: center;
 border-radius: 10px;
-
 }
 
 li{

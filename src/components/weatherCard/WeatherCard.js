@@ -15,7 +15,7 @@ const WeatherCard = (props) => {
       <div className="card">
           <div className="container">
           {/*this is where all the weather data is being displayed from the api call*/}
-                  <h4><b>{weather?.name}</b></h4>
+                  <h1 className="cityHeader">{weather?.name}</h1>
                   <p> <b>Country : {weather?.sys?.country}</b> </p>
                   <p> {weather?.weather[0].main} </p>
                   <p> Temperature: {weather?.main?.temp} </p>

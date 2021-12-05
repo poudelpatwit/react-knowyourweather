@@ -8,10 +8,9 @@ const WeatherDaily = () => {
     return(
              <div className="card">
                  <div className="container">
-                     <p> WeatherDaily </p>
+                     <p> Daily Weather Data </p>
                  </div>
              </div>
-
     );
 
 }

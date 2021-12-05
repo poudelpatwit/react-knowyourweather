@@ -1,12 +1,14 @@
 .card {
   /* Add shadows to create the "card" effect */
   display: flex;
+  align-content: center;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
   transition: 0.3s;
   background-image: linear-gradient(white, yellow);
   border-radius: 10px;
   margin-bottom: 10px;
   font-family: 'Courier New', 'monospace';
+  background-image: linear-gradient(#43cea2 ,  #185a9d);
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -16,15 +18,24 @@
 
 /* Add some padding inside the card container */
 .container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
   padding: 2px 16px;
 
 }
 
 .iconContainer {
   display: flex;
-  justify-content: right;
+  justify-content: center;
   alignment: right;
   padding: 20px;
   border: 2px solid lightblue;
   border-radius: 10px;
+}
+.cityHeader{
+  text-align: center;
+  align-content: center;
+
+
 }
