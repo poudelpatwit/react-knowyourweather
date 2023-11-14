@@ -15,13 +15,15 @@ import WeatherForFuture from "../components/weatherCard/WeatherForFuture";
 import WeatherDaily from "../components/weatherCard/WeatherDaily";
 
 import { default as axios } from "axios";
+
+
 import Header from "../components/header/header";
+
 
 function Main() {
 
     //openweathermap api key
-    var OPEN_WEATHER_API_KEY = "fe4feefa8543e06d4f3c66d92c61b69c";
-    var GEO_CODE_API = "2c857ccaba884d4b8378f6de0e309bfa";
+    var OPEN_WEATHER_API_KEY = process.env.REACT_APP_OPEN_WEATHER_API_KEY
 
     //first component variables
     //this passes the city and calls the update city function
