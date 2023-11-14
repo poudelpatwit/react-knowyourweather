@@ -3,14 +3,15 @@
 @import 'components/searchBar';
 @import 'components/weatherCard';
 @import 'components/contactIcons.scss';
+@import 'components/header.scss';
 
-.mainPage{
-       display:flex;
-       flex-direction: column;
+.mainPage {
+        display: flex;
+        flex-direction: column;
 }
 
-.surroundingCities{
-        display:flex;
+.surroundingCities {
+        display: flex;
         flex-wrap: wrap;
         flex-direction: row;
         justify-content: center;
